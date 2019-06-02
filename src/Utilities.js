@@ -1,10 +1,10 @@
 'use strict';
 
-var httpJson = require('./http-json.js');
-var urls = require('./urls.json');
-var Address = require('./Address.js');
+const httpJson = require('./http-json.js');
+const urls = require('./urls.json');
+const Address = require('./Address.js');
 
-var findNearbyStores = function(address, pickUpType, callback) {
+const findNearbyStores = function(address, pickUpType, callback) {
     if(typeof pickUpType == 'function'){
         callback=pickUpType;
         pickUpType='Delivery';
@@ -24,10 +24,10 @@ var findNearbyStores = function(address, pickUpType, callback) {
         return false;
     }
 
-    var address = new Address(address)
-    var addressLines=address.getAddressLines();
+    let updatedAddress = new Address(address)
+    const addressLines=updatedAddress.getAddressLines();
 
-    var url = urls.store.find.replace(
+    const url = urls.store.find.replace(
         '${line1}',
         encodeURI(
           addressLines.line1

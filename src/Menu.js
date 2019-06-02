@@ -1,10 +1,10 @@
 'use strict';
 
-var MenuItem = require('./MenuItem');
-var MenuCategory = require('./MenuCategory');
+const MenuItem = require('./MenuItem');
+const MenuCategory = require('./MenuCategory');
 
 
-var Menu = function(menuData) {
+const Menu = function(menuData) {
     if(!menuData) {
         menuData={};
     } else {

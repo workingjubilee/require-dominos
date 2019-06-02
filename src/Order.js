@@ -1,10 +1,10 @@
 'use strict';
 
-var urls = require('./urls.json');
-var httpJson = require('./http-json');
-var util=require('util');
+const urls = require('./urls.json');
+const httpJson = require('./http-json');
+const util=require('util');
 
-var Order = function(parameters) {
+const Order = function(parameters) {
   if(!parameters){
       parameters={}
   }
@@ -42,7 +42,7 @@ var Order = function(parameters) {
   this.AmountsBreakdown;
 
   if(parameters['customer']) {
-    var Customer = parameters.customer;
+    const Customer = parameters.customer;
 
     this.Address = Customer.address;
     this.CustomerID = Customer.ID;
@@ -53,8 +53,8 @@ var Order = function(parameters) {
     return this;
   }
   if(parameters['Order'] || parameters['order']) {  //Used to initialize order object from Dominos results (Also handy for initializing from DB)
-    var prevOrder = parameters.Order;
-    var Customer = parameters.customer;
+    const prevOrder = parameters.Order;
+    const Customer = parameters.customer;
 
     this.Address = (Customer)? (
         (Customer.address)? Customer.address : prevOrder.Address
@@ -96,7 +96,7 @@ Order.prototype.addCoupon = function(Coupon) { //Add coupon to Order
 };
 
 Order.prototype.removeCoupon = function(Coupon) { //Remove coupon from Order
-    var index = this.Coupons.indexOf(Coupon);
+    let index = this.Coupons.indexOf(Coupon);
     if (index != -1) {
         this.Coupons.splice(index, 1);
     }
@@ -107,7 +107,7 @@ Order.prototype.addItem = function(Item) { //Add product to Order
 };
 
 Order.prototype.removeItem = function(Item) {  //Remove product from Order
-  var index = this.Products.indexOf(Item);
+  let index = this.Products.indexOf(Item);
   if(index != -1) {
     this.Products.splice(index, 1);
   }
@@ -125,7 +125,7 @@ Order.prototype.validate = function(callback) {  //Validate Order
   }
 
   //Blame Dominos, this isn't my doing.
-  var stringified = JSON.stringify({
+  const stringified = JSON.stringify({
     'Order' : this
   });
 
@@ -143,7 +143,7 @@ Order.prototype.price = function(callback) {
     return;
   }
 
-  var stringified = JSON.stringify({
+  const stringified = JSON.stringify({
     'Order' : this
   });
 
@@ -160,7 +160,7 @@ Order.prototype.place = function(callback) {
       }
   }
 
-  var stringified = JSON.stringify({
+  const stringified = JSON.stringify({
     'Order' : this
   });
 
@@ -168,7 +168,7 @@ Order.prototype.place = function(callback) {
 };
 
 Order.prototype.mergeResponse = function(callback,response){
-    for(var key in response.result.Order){
+    for(let key in response.result.Order){
         if(util.isArray(response.result.Order[key])&&!response.result.Order[key].length){
             continue;
         }
@@ -181,7 +181,7 @@ Order.prototype.mergeResponse = function(callback,response){
 }
 
 Order.prototype.validateCC=function(number){
-    var re = {
+    const re = {
         visa        : /^4[0-9]{12}(?:[0-9]{3})?$/,
         mastercard  : /^5[1-5][0-9]{14}$/,
         amex        : /^3[47][0-9]{13}$/,

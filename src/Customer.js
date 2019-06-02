@@ -1,9 +1,9 @@
 'use strict';
 
-var urls = require('./urls.json');
-var httpJson = require('./http-json');
+const urls = require('./urls.json');
+const httpJson = require('./http-json');
 
-var Customer = function(parameters) {
+const Customer = function(parameters) {
     this.ID = '';
     // These are named with camelCase because Dominos API uses this format
     if(!parameters){

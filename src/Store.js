@@ -1,10 +1,10 @@
 'use strict';
 
-var httpJson = require('./http-json');
-var urls = require('./urls.json');
-var util=require('util');
-var fs=require('fs');
-var Menu=require('./Menu.js');
+const httpJson = require('./http-json');
+const urls = require('./urls.json');
+const util=require('util');
+const fs=require('fs');
+const Menu=require('./Menu.js');
 
 var Store = function(parameters) {
     this.ID = parameters.ID;
@@ -42,7 +42,7 @@ Store.prototype.getMenu = function(callback, lang, noCache) {
     if(!lang)
         lang = 'en';
 
-    var url = urls.store.menu.replace('${storeID}', this.ID)
+    const url = urls.store.menu.replace('${storeID}', this.ID)
         .replace('${lang}', lang);
 
 
@@ -77,14 +77,14 @@ Store.prototype.getFriendlyNames = function(callback, lang) {
   if(!lang)
       lang = 'en';
 
-  var url = urls.store.menu.replace('${storeID}', this.ID)
+  const url = urls.store.menu.replace('${storeID}', this.ID)
       .replace('${lang}', lang);
 
   httpJson.get(url, function(result) {
-    var itemMapping = [];
-    var keys = Object.keys(result.result.Variants);
+    let itemMapping = [];
+    let keys = Object.keys(result.result.Variants);
     keys.forEach(function(key) {
-      var json = {};
+      let json = {};
       json[result.result.Variants[key].Name] = key
       itemMapping.push(json);
     });

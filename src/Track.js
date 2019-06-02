@@ -1,8 +1,8 @@
 'use strict';
 
-var urls = require('./urls.json');
-var request = require('request');
-var parser = require('xml2json');
+const urls = require('./urls.json');
+const request = require('request');
+const parser = require('xml2json');
 
 module.exports.byPhone = function(phone, callback) {
     if( !phone || !callback) {
@@ -51,7 +51,7 @@ module.exports.byUrl = function(url, callback){
                 return;
             }
 
-            var result = parser.toJson(
+            const result = parser.toJson(
                 body,
                 {
                     coerce: false,

@@ -1,7 +1,7 @@
 'use strict';
 
 
-var Item = function(parameters) {
+const Item = function(parameters) {
     if(!parameters){
         parameters={}
     }
@@ -16,7 +16,7 @@ var Item = function(parameters) {
     this.Options = { 'C': {'1/1': '1'}, 'X': {'1/1': '1'} };
 
     if(parameters.options) {
-        for (var i=0; i<parameters.options.length; i++) {
+        for (let i=0; i<parameters.options.length; i++) {
             this.Options[parameters.options[i]] = { '1/1': '1' };
         }
     }

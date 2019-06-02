@@ -1,7 +1,7 @@
 'use strict';
 
 
-var MenuItem = function(menuData) {
+const MenuItem = function(menuData) {
     if(!menuData) menuData={};
 
     this.menuData = menuData;

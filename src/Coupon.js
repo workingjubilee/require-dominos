@@ -1,6 +1,6 @@
 'use strict';
 
-var Coupon = function(parameters) {
+const Coupon = function(parameters) {
     this.Code = parameters.code;
     this.Qty = parameters.quantity ? parameters.quantity : 1;
     this.ID = 1;

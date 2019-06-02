@@ -1,8 +1,8 @@
 'use strict';
 
-var util = require('util');
+const util = require('util');
 
-var Address = function(parameters) {
+const Address = function(parameters) {
     Object.defineProperties(
         this,
         {
@@ -87,9 +87,9 @@ var Address = function(parameters) {
     }
 
     function parse(locationString) {
-        var splitAddress = locationString.split(',');
+        let splitAddress = locationString.split(',');
 
-        for (var i in splitAddress) {
+        for (let i in splitAddress) {
             splitAddress[i] = splitAddress[i].trim();
         }
 
@@ -180,12 +180,12 @@ var Address = function(parameters) {
     };
 
     function getAddressLines() {
-        var line1 = this.Street||'';
-        var line2 = (this.City ? this.City + ',' : '') +
+        const line1 = this.Street||'';
+        const line2 = (this.City ? this.City + ',' : '') +
             (this.Region ? this.Region + ',' : '') +
             this.PostalCode
 
-        var lines=[line1, line2];
+        let lines=[line1, line2];
         lines.line1=line1;
         lines.line2=line2;
 

@@ -1,7 +1,7 @@
 'use strict';
 
 
-var MenuCategory = function(menuData,parentCategory) {
+const MenuCategory = function(menuData,parentCategory) {
     if(!menuData) menuData={};
 
     this.menuData = menuData;
@@ -27,7 +27,7 @@ MenuCategory.prototype.getCode = function() {
 }
 
 MenuCategory.prototype.getCategoryPath = function() {
-    var result = this.parent !== undefined ? this.parent.getCategoryPath().concat([this.menuData.Code]) : [this.menuData.Code];
+    const result = this.parent !== undefined ? this.parent.getCategoryPath().concat([this.menuData.Code]) : [this.menuData.Code];
     return result;
 }
 
