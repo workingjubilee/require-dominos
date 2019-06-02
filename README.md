@@ -1,6 +1,8 @@
 Domino's Pizza API
 ====
-This is a node.js API for integrating with the Domino's pizza APIs.
+This is a Node.js Domino's Pizza API. Please pardon our dust: this is a fork of an existing project, updated.
+
+
 [See the pretty Domino's Pizza API documentation](http://riaevangelist.github.io/node-dominos-pizza-api/)
 
 [![Join the chat at https://gitter.im/RIAEvangelist/node-dominos-pizza-api](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/RIAEvangelist/node-dominos-pizza-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -24,11 +26,6 @@ Special thanks to : [@madelinecameron](https://github.com/madelinecameron), a ma
 ---
 
 This work is licenced via the [DBAD Public Licence](http://www.dbad-license.org/). It is a derivative work from Dominos API.
-
-Install the [Dominos](https://www.npmjs.com/package/dominos) pizza api
-====
-
-` npm i dominos ` or ` npm i --save dominos `
 
 
 Contributing
