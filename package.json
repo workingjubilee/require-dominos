@@ -1,5 +1,5 @@
 {
-  "name": "dominos",
+  "name": "require-dominos",
   "version": "2.1.2",
   "description": "node js API for Domino's pizza",
   "main": "dominos-pizza-api.js",
